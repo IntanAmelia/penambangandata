@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 
 
-thyroid_model = pickle.load(open('thyroid_model.sav', 'rb'))
+thyroid_model = pickle.load(open('thyroidmodel.sav', 'rb'))
 
 #judul web
 st.title('Data Mining')
