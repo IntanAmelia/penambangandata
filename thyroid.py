@@ -45,4 +45,4 @@ if st.button('Prediksi'):
         print('Pasien Negative Thyroid')
     else :
         print('Pasien Positive terkena Thyroid')
-st.success(diab_diagnosis)
+st.success(diagnosis)
