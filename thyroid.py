@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 
 
-thyroidmodel = pickle.load(open('thyroidmodel.sav', 'rb'))
+thyroid_model = pickle.load(open('thyroidmodel.sav', 'rb'))
 
 #judul web
 st.title('Data Mining')
@@ -37,11 +37,12 @@ TBGMeasured = st.radio('TBG measured',['f'])
 referralsource = st.multiselect('Referral source',['SVHC', 'SVI', 'STMW', 'SVHD', 'Other'])
 
 diagnosis = ''
+no_index = 0
 
 if st.button('Prediksi'):
-    prediction = thyroidmodel.predict([[age, sex, onthyroxine, queryonthyroxine, onantithyroidmedication, sick, pregnant, thyroidsurgery , I131treatment, queryhypothyroid, queryhyperthyroid, lithium, goitre, tumor, hypopituitary, psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, referralsource]])
+    prediction = thyroid_model.predict([[age, sex, onthyroxine, queryonthyroxine, onantithyroidmedication, sick, pregnant, thyroidsurgery , I131treatment, queryhypothyroid, queryhyperthyroid, lithium, goitre, tumor, hypopituitary, psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, referralsource]])
 
-    if (prediction[0] == 0):
+    if (prediction[no_index] == 0):
         diagnosis = 'Pasien Negative Thyroid'
     else :
         diagnosis = 'Pasien Positive terkena Thyroid'
