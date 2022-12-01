@@ -156,7 +156,7 @@ with tab5:
     if st.button('Prediksi'):
         prediction = thyroid_model.predict([[age, sex, onthyroxine, queryonthyroxine, onantithyroidmedication, sick, pregnant, thyroidsurgery , I131treatment, queryhypothyroid, queryhyperthyroid, lithium, goitre, tumor, hypopituitary, psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, referralsource]])
 
-        if (prediction[0] == 0):
+        if (prediction == 0):
             diagnosis = 'Pasien Negative Thyroid'
         else :
             diagnosis = 'Pasien Positive terkena Thyroid'
