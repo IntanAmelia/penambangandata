@@ -19,7 +19,7 @@ with tab1:
     
 with tab2:
     st.write("Load Data :")
-    data = pd.read_csv('https://github.com/IntanAmelia/penambangandata/blob/main/dataset_hypothyroid.csv')
+    data = pd.read_csv(https://github.com/IntanAmelia/penambangandata/blob/main/dataset_hypothyroid.csv)
     data = data.dropna()
     st.dataframe(data)
         
