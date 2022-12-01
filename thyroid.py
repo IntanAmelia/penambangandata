@@ -14,7 +14,6 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.datasets import make_classification
 
 
-thyroid_model = pickle.load(open('thyroidmodel.sav', 'rb'))
 
 #judul web
 st.title('Data Mining')
@@ -117,6 +116,7 @@ with tab4:
     st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
     
 with tab5:
+    thyroid_model = pickle.load(open('thyroidmodel.sav', 'rb'))
     age = st.text_input('Masukkan Umur Anda : ')
     sex = st.text_input('Gender')
     onthyroxine = st.text_input('On thyroxine')
