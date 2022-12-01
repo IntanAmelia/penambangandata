@@ -30,9 +30,13 @@ with tab1:
     
 with tab2:
     st.write("Load Data :")
-    data = pd.read_csv('https://raw.githubusercontent.com/IntanAmelia/penambangandata/main/dataset_hypothyroid.csv')
-    data = data.dropna()
-    st.dataframe(data)
+    data_file = st.file_uploader("Upload CSV",type=['csv'])
+    if data_file is not None:
+        file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
+        st.write(file_details)
+        data = pd.read_csv(data_file)
+        data = data.dropna()
+        st.dataframe(data)
         
 with tab3:
     st.write("Normalisasi Data")
