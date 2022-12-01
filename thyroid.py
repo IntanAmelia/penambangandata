@@ -1,5 +1,17 @@
 import pickle
 import streamlit as st
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from collections import OrderedDict
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import confusion_matrix, accuracy_score, recall_score, precision_score, f1_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import BaggingClassifier
+from sklearn.datasets import make_classification
 
 
 thyroid_model = pickle.load(open('thyroidmodel.sav', 'rb'))
