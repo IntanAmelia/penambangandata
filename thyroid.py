@@ -31,6 +31,7 @@ with tab1:
 with tab2:
     st.write("Load Data :")
     data = pd.read_csv('https://raw.githubusercontent.com/IntanAmelia/penambangandata/main/dataset_hypothyroid.csv')
+    data = data.dropna()
     st.dataframe(data)
         
 with tab3:
